@@ -1,0 +1,68 @@
+/* 90sレトロ感：システムフォント + ビビッド色 + 角丸なし + 表組み風 */
+* { box-sizing: border-box; }
+body {
+  margin:0;
+  background:#e0e0e0 url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==') repeat; /* 透過1pxで“それっぽい”質感 */
+  color:#000;
+  font:14px/1.4 "MS UI Gothic", "Osaka", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+}
+
+.site-header, .site-footer { background:#c0c0c0; }
+.site-header {
+  position: static;
+  border-bottom: 3px double #000; /* ダブル線がレトロ */
+  padding: 6px 10px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand { font-weight:bold; letter-spacing:0; text-transform:uppercase; }
+.nav .btn { margin-left:6px; }
+
+.container { max-width: 960px; margin: 10px auto; padding: 0 10px; }
+
+.hero {
+  background: #ffff99; /* 黄色系強調 */
+  border: 2px solid #000;
+  border-radius: 0;
+  padding: 10px;
+  box-shadow: 4px 4px 0 #000; /* ドロップ影を“矩形”で */
+}
+.hero h1 { margin: 0 0 6px; font-size: 20px; }
+.hero p  { margin: 0; }
+
+.cards {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 10px;
+}
+.card {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 0;
+  padding: 10px;
+  box-shadow: 4px 4px 0 #000;
+}
+.card h2 { margin:0 0 6px; font-size:16px; }
+.card p  { margin:0 0 8px; }
+
+.btn {
+  appearance:none; border:2px outset #fff; /* 立体ボタン風 */
+  background: linear-gradient(#e0e0e0, #b0b0b0);
+  color:#000; padding:6px 10px; cursor:pointer;
+  font-weight:bold; border-radius:0;
+}
+.btn:active { border-style: inset; }
+
+.accordion {
+  margin-top: 10px;
+  background: #fff;
+  border: 2px dashed #000; /* ダッシュもレトロ */
+  padding: 8px;
+}
+.accordion > summary { cursor: pointer; font-weight:bold; }
+.accordion > p { margin:8px 0 0; }
+
+.site-footer {
+  margin-top: 16px; padding: 8px 10px;
+  border-top: 3px double #000; text-align:center; color:#000;
+}

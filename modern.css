@@ -1,0 +1,84 @@
+:root{
+  --bg:#0f172a;        /* 紺系ダーク */
+  --panel:#111827;     /* さらに暗い */
+  --card:#1f2937;      /* 面の色 */
+  --text:#e5e7eb;      /* 明るい文字 */
+  --muted:#94a3b8;     /* サブテキスト */
+  --primary:#3b82f6;   /* アクション色（ブルー） */
+  --radius:14px;
+  --shadow:0 10px 24px rgba(0,0,0,.35);
+  --gap:16px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+          "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body {
+  margin:0; color:var(--text); background:radial-gradient(1200px 800px at 20% -10%, #1e293b 0, var(--bg) 40%, #0b1222 100%);
+  font:16px/1.6 var(--font);
+}
+
+.site-header, .site-footer {
+  background: rgba(17,24,39,.8);
+  backdrop-filter: blur(8px);
+}
+
+.site-header {
+  position: sticky; top:0; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 20px; border-bottom:1px solid #334155;
+}
+.brand { font-weight:700; letter-spacing:.08em; }
+.nav .btn { margin-left:8px; }
+
+.container {
+  max-width:1000px; margin:32px auto; padding:0 20px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #172554, #0f766e);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.hero h1 { margin:0 0 8px; font-size:clamp(22px, 3vw, 32px); }
+.hero p { margin:0; color:var(--text); opacity:.9; }
+
+.cards {
+  margin-top:24px;
+  display:grid; gap:var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+}
+.card {
+  background: var(--card);
+  border: 1px solid #334155;
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.card h2 { margin:0 0 8px; font-size:18px; }
+.card p { margin:0 0 12px; color:var(--muted); }
+
+.btn {
+  appearance:none; border:0; cursor:pointer; user-select:none;
+  padding:10px 14px; border-radius:12px;
+  background: var(--primary); color:white; font-weight:600;
+  transition: transform .06s ease, filter .2s ease;
+}
+.btn:active { transform: translateY(1px) scale(.99); }
+.btn:hover  { filter: brightness(1.05); }
+
+.accordion {
+  margin-top:24px;
+  background: var(--panel);
+  border:1px solid #334155; border-radius: var(--radius);
+  padding: 12px 16px;
+}
+.accordion > summary { cursor: pointer; font-weight:600; }
+.accordion > p { color:var(--muted); margin:10px 0 0; }
+
+.site-footer {
+  margin-top:40px; padding:16px 20px;
+  border-top:1px solid #334155; text-align:center; color:var(--muted);
+}
